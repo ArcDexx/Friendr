@@ -12,6 +12,7 @@
 		4C38D2791E04742D00609C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C38D2771E04742D00609C2A /* Main.storyboard */; };
 		4C38D27B1E04742D00609C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C38D27A1E04742D00609C2A /* Assets.xcassets */; };
 		4C38D27E1E04742D00609C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C38D27C1E04742D00609C2A /* LaunchScreen.storyboard */; };
+		4C38D28C1E04768A00609C2A /* FRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38D28B1E04768A00609C2A /* FRLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4C38D27A1E04742D00609C2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C38D27D1E04742D00609C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C38D27F1E04742D00609C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C38D28B1E04768A00609C2A /* FRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FRLoginViewController.swift; path = Controllers/Login/FRLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,11 @@
 		4C38D2721E04742D00609C2A /* Friendr */ = {
 			isa = PBXGroup;
 			children = (
+				4C38D2891E04761A00609C2A /* Frameworks */,
+				4C38D2881E04761300609C2A /* Services */,
+				4C38D2871E04760C00609C2A /* Models */,
+				4C38D2861E04760400609C2A /* Views */,
+				4C38D2851E0475F900609C2A /* Controllers */,
 				4C38D2731E04742D00609C2A /* AppDelegate.swift */,
 				4C38D2751E04742D00609C2A /* ViewController.swift */,
 				4C38D2771E04742D00609C2A /* Main.storyboard */,
@@ -62,6 +69,50 @@
 				4C38D27F1E04742D00609C2A /* Info.plist */,
 			);
 			path = Friendr;
+			sourceTree = "<group>";
+		};
+		4C38D2851E0475F900609C2A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C38D28A1E04762500609C2A /* Login */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4C38D2861E04760400609C2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4C38D2871E04760C00609C2A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4C38D2881E04761300609C2A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4C38D2891E04761A00609C2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C38D28A1E04762500609C2A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4C38D28B1E04768A00609C2A /* FRLoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C38D2761E04742D00609C2A /* ViewController.swift in Sources */,
+				4C38D28C1E04768A00609C2A /* FRLoginViewController.swift in Sources */,
 				4C38D2741E04742D00609C2A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
