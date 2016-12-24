@@ -18,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FRUserListTableViewController.swift; path = UserList/FRUserListTableViewController.swift; sourceTree = "<group>"; };
+		27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FRUserListTableViewController.swift; path = Controllers/UserList/FRUserListTableViewController.swift; sourceTree = "<group>"; };
+		27E9C4841E0EC2DD005EF471 /* Friendr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Friendr.entitlements; sourceTree = "<group>"; };
 		37BB5C0D44A8B1E882AE9C81 /* Pods_Friendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C38D2701E04742D00609C2A /* Friendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C38D2731E04742D00609C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		4C38D2721E04742D00609C2A /* Friendr */ = {
 			isa = PBXGroup;
 			children = (
+				27E9C4841E0EC2DD005EF471 /* Friendr.entitlements */,
 				4C38D2891E04761A00609C2A /* Frameworks */,
 				4C38D2881E04761300609C2A /* Services */,
 				4C38D2871E04760C00609C2A /* Models */,
@@ -185,7 +187,13 @@
 				TargetAttributes = {
 					4C38D26F1E04742D00609C2A = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = WN2U2N45DN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -400,6 +408,8 @@
 			baseConfigurationReference = AB9F378210443A1EA8C26875 /* Pods-Friendr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Friendr/Friendr.entitlements;
+				DEVELOPMENT_TEAM = WN2U2N45DN;
 				INFOPLIST_FILE = Friendr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mti.Friendr;
@@ -413,6 +423,8 @@
 			baseConfigurationReference = A117C751D479F962497F749B /* Pods-Friendr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Friendr/Friendr.entitlements;
+				DEVELOPMENT_TEAM = WN2U2N45DN;
 				INFOPLIST_FILE = Friendr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mti.Friendr;
