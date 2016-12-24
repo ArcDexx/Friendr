@@ -14,26 +14,31 @@ class User
     var name: String
     var picture: String
     var birthday: String
-    var age : Int
-    var totalLikes : Int
+    var age : String
     var sampleLikes: String
-    var totalFriends : Int
-    var sampleFriends : String
+    var totalFriends : String
     
-    init(id: String, name: String, picture: String, birthday: String, totalLikes: Int,
-         sampleLikes: String, totalFriends: Int, sampleFriends: String)
+    init(id: String, name: String, picture: String, birthday: String,
+         sampleLikes: String, totalFriends: String)
     {
         self.id = id
         self.name = name
         self.picture = picture
         self.birthday = birthday
-        self.totalLikes = totalLikes
         self.sampleLikes = sampleLikes
         self.totalFriends = totalFriends
-        self.sampleFriends = sampleFriends
         
-        var calendar : NSCalendar = NSCalendar.current as NSCalendar
-        self.age = Calendar.current.dateComponents([.year], from: birthday, to: Date()).year!
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "MM/dd/yyyy"
+        
+        let DOB = formatter.date(from: birthday)
+        
+        let dcf = DateComponentsFormatter()
+        dcf.allowedUnits = .year
+        dcf.unitsStyle = .full
+        
+        self.age = dcf.string(from: DOB!, to: Date())!
     }
 }
 
