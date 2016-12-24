@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		277C944A1E0EE0C400F8F437 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277C94491E0EE0C400F8F437 /* GoogleService-Info.plist */; };
+		277C944C1E0EE21B00F8F437 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C944B1E0EE21B00F8F437 /* User.swift */; };
+		277C94501E0EF04C00F8F437 /* FacebookHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C944F1E0EF04C00F8F437 /* FacebookHandler.swift */; };
 		27E9C4831E0EB98E005EF471 /* FRUserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */; };
 		4C38D2741E04742D00609C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38D2731E04742D00609C2A /* AppDelegate.swift */; };
 		4C38D2761E04742D00609C2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38D2751E04742D00609C2A /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		277C94491E0EE0C400F8F437 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		277C944B1E0EE21B00F8F437 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		277C944F1E0EF04C00F8F437 /* FacebookHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookHandler.swift; path = Services/FacebookHandler.swift; sourceTree = "<group>"; };
 		27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FRUserListTableViewController.swift; path = Controllers/UserList/FRUserListTableViewController.swift; sourceTree = "<group>"; };
 		27E9C4841E0EC2DD005EF471 /* Friendr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Friendr.entitlements; sourceTree = "<group>"; };
 		37BB5C0D44A8B1E882AE9C81 /* Pods_Friendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +100,7 @@
 				4C38D27A1E04742D00609C2A /* Assets.xcassets */,
 				4C38D27C1E04742D00609C2A /* LaunchScreen.storyboard */,
 				4C38D27F1E04742D00609C2A /* Info.plist */,
+				277C94491E0EE0C400F8F437 /* GoogleService-Info.plist */,
 			);
 			path = Friendr;
 			sourceTree = "<group>";
@@ -117,6 +124,7 @@
 		4C38D2871E04760C00609C2A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				277C944B1E0EE21B00F8F437 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 		4C38D2881E04761300609C2A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				277C944F1E0EF04C00F8F437 /* FacebookHandler.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C38D27E1E04742D00609C2A /* LaunchScreen.storyboard in Resources */,
+				277C944A1E0EE0C400F8F437 /* GoogleService-Info.plist in Resources */,
 				4C38D27B1E04742D00609C2A /* Assets.xcassets in Resources */,
 				4C38D2791E04742D00609C2A /* Main.storyboard in Resources */,
 			);
@@ -284,6 +294,8 @@
 				27E9C4831E0EB98E005EF471 /* FRUserListTableViewController.swift in Sources */,
 				4C38D2761E04742D00609C2A /* ViewController.swift in Sources */,
 				4C38D28C1E04768A00609C2A /* FRLoginViewController.swift in Sources */,
+				277C944C1E0EE21B00F8F437 /* User.swift in Sources */,
+				277C94501E0EF04C00F8F437 /* FacebookHandler.swift in Sources */,
 				4C38D2741E04742D00609C2A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

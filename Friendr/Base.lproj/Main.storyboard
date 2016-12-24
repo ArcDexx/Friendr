@@ -32,7 +32,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="xVa-dG-rNd" kind="show" identifier="toListFromLogin" id="nLK-ZO-5YH"/>
+                        <segue destination="u8D-EO-NFH" kind="show" identifier="toListFromLogin" id="nLK-ZO-5YH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -62,10 +62,32 @@
                             <outlet property="delegate" destination="xVa-dG-rNd" id="hYT-jz-J0s"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="x81-mO-8U9">
+                        <barButtonItem key="leftBarButtonItem" title="Exit" id="3ZM-oi-swd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="R8k-wE-XTb"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vqq-zj-exf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="61"/>
+            <point key="canvasLocation" x="1952.8" y="60.719640179910051"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y6L-yT-Imc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u8D-EO-NFH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pa5-Dc-94b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xVa-dG-rNd" kind="relationship" relationship="rootViewController" id="NaQ-5f-TNt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2am-Vj-phH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013.6" y="60.719640179910051"/>
         </scene>
     </scenes>
 </document>

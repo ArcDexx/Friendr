@@ -9,16 +9,20 @@
 import UIKit
 import FacebookLogin
 import FacebookCore
+import SwiftyJSON
+import FirebaseDatabase
 
 class FRLoginViewController: UIViewController, LoginButtonDelegate {
 
+    var ref: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("viewDidLoad")
-    
         
-        let loginButton = LoginButton(readPermissions: [.publicProfile ])
+        ref = FIRDatabase.database().reference()
+        
+        let loginButton = LoginButton(readPermissions: [.publicProfile, .custom("user_photos"), .custom("user_likes"), .custom("user_birthday")])
+        
         loginButton.delegate = self
         
         loginButton.frame = CGRect(x: 0,y: self.view.frame.height - 50 , width: self.view.frame.width , height: 50)
@@ -34,6 +38,7 @@ class FRLoginViewController: UIViewController, LoginButtonDelegate {
             print("Cancelled")
         default:
             print("Logged In")
+            FacebookHandler.getFacebookData()
             performSegue(withIdentifier: "toListFromLogin", sender: self)
         }
     }
