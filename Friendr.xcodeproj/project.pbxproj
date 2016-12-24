@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27E9C4831E0EB98E005EF471 /* FRUserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */; };
 		4C38D2741E04742D00609C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38D2731E04742D00609C2A /* AppDelegate.swift */; };
 		4C38D2761E04742D00609C2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38D2751E04742D00609C2A /* ViewController.swift */; };
 		4C38D2791E04742D00609C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C38D2771E04742D00609C2A /* Main.storyboard */; };
 		4C38D27B1E04742D00609C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C38D27A1E04742D00609C2A /* Assets.xcassets */; };
 		4C38D27E1E04742D00609C2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C38D27C1E04742D00609C2A /* LaunchScreen.storyboard */; };
 		4C38D28C1E04768A00609C2A /* FRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38D28B1E04768A00609C2A /* FRLoginViewController.swift */; };
+		E02BA0DCC4EEE3435DC4A37A /* Pods_Friendr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BB5C0D44A8B1E882AE9C81 /* Pods_Friendr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FRUserListTableViewController.swift; path = UserList/FRUserListTableViewController.swift; sourceTree = "<group>"; };
+		37BB5C0D44A8B1E882AE9C81 /* Pods_Friendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C38D2701E04742D00609C2A /* Friendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C38D2731E04742D00609C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C38D2751E04742D00609C2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		4C38D27D1E04742D00609C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C38D27F1E04742D00609C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C38D28B1E04768A00609C2A /* FRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FRLoginViewController.swift; path = Controllers/Login/FRLoginViewController.swift; sourceTree = "<group>"; };
+		A117C751D479F962497F749B /* Pods-Friendr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friendr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Friendr/Pods-Friendr.release.xcconfig"; sourceTree = "<group>"; };
+		AB9F378210443A1EA8C26875 /* Pods-Friendr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friendr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Friendr/Pods-Friendr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E02BA0DCC4EEE3435DC4A37A /* Pods_Friendr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27505838DBFF69820D8FE696 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37BB5C0D44A8B1E882AE9C81 /* Pods_Friendr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27E9C47F1E0EB8FA005EF471 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */,
+			);
+			name = UserList;
+			sourceTree = "<group>";
+		};
 		4C38D2671E04742D00609C2A = {
 			isa = PBXGroup;
 			children = (
 				4C38D2721E04742D00609C2A /* Friendr */,
 				4C38D2711E04742D00609C2A /* Products */,
+				FE13878122DFDA8A7D3E0886 /* Pods */,
+				27505838DBFF69820D8FE696 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +99,7 @@
 		4C38D2851E0475F900609C2A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				27E9C47F1E0EB8FA005EF471 /* UserList */,
 				4C38D28A1E04762500609C2A /* Login */,
 			);
 			name = Controllers;
@@ -115,6 +141,15 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		FE13878122DFDA8A7D3E0886 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB9F378210443A1EA8C26875 /* Pods-Friendr.debug.xcconfig */,
+				A117C751D479F962497F749B /* Pods-Friendr.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C38D2821E04742D00609C2A /* Build configuration list for PBXNativeTarget "Friendr" */;
 			buildPhases = (
+				29E4DBD019AA2BBD9D35062A /* [CP] Check Pods Manifest.lock */,
 				4C38D26C1E04742D00609C2A /* Sources */,
 				4C38D26D1E04742D00609C2A /* Frameworks */,
 				4C38D26E1E04742D00609C2A /* Resources */,
+				18A1CA800038D2AD57AC4219 /* [CP] Embed Pods Frameworks */,
+				0186CB0F04D122B6943AA671 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,11 +220,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0186CB0F04D122B6943AA671 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Friendr/Pods-Friendr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18A1CA800038D2AD57AC4219 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Friendr/Pods-Friendr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29E4DBD019AA2BBD9D35062A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4C38D26C1E04742D00609C2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E9C4831E0EB98E005EF471 /* FRUserListTableViewController.swift in Sources */,
 				4C38D2761E04742D00609C2A /* ViewController.swift in Sources */,
 				4C38D28C1E04768A00609C2A /* FRLoginViewController.swift in Sources */,
 				4C38D2741E04742D00609C2A /* AppDelegate.swift in Sources */,
@@ -310,6 +397,7 @@
 		};
 		4C38D2831E04742D00609C2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB9F378210443A1EA8C26875 /* Pods-Friendr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Friendr/Info.plist;
@@ -322,6 +410,7 @@
 		};
 		4C38D2841E04742D00609C2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A117C751D479F962497F749B /* Pods-Friendr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Friendr/Info.plist;
@@ -351,6 +440,7 @@
 				4C38D2841E04742D00609C2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

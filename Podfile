@@ -1,4 +1,6 @@
 use_frameworks!
 
-pod 'FacebookCore'
-pod 'FacebookLogin'
+target "Friendr" do
+	pod 'FacebookCore'
+	pod 'FacebookLogin'
+end
