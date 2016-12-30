@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import AlamofireImage
+import FirebaseDatabase
+import SwiftyJSON
+
+class ProfileTableViewCell: UITableViewCell {
+    @IBOutlet weak var nameAgeLabel: UILabel!
+    @IBOutlet weak var profilePic: UIImageView!
+}
 
 class FRUserListTableViewController: UITableViewController {
 
+    var users : Array<User> = []
+    var ref: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        fillUserList()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,27 +41,55 @@ class FRUserListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return users.count
     }
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
         
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
 
-        // Configure the cell...
+        print(users[indexPath.row].picture)
+        let imageUrl = URL(string: users[indexPath.row].picture)
+        cell.nameAgeLabel?.text = users[indexPath.row].name + ", " + users[indexPath.row].age
+        
+        if imageUrl != nil
+        {
+            //cell.profilePic.af_setImage(withURL: imageUrl!)
+        }
 
+        print("cellForRow called")
         return cell
     }
-    */
+    
+    func fillUserList()
+    {
+        ref = FIRDatabase.database().reference()
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let jsonUsers = JSON(snapshot.value!)
+            
+            for (key, user) in jsonUsers {
+                let user = User(id: user["id"].stringValue, name: user["name"].stringValue, picture: user["picture"].stringValue, birthday: user["birthday"].stringValue, sampleLikes: "", totalFriends: user["friends_count"].stringValue)
+                
+                self.users.append(user)
+                
+                self.tableView.beginUpdates()
+                let indexPath = IndexPath(row: self.users.count - 1, section: 0)
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
+                self.tableView.endUpdates()
+            }
+        })
+    }
 
     /*
     // Override to support conditional editing of the table view.

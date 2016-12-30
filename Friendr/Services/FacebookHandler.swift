@@ -13,9 +13,11 @@ import FirebaseDatabase
 
 class FacebookHandler
 {
+    static var ref: FIRDatabaseReference!
+    
     static func getFacebookData()
     {
-        if let accessToken = AccessToken.current
+        if AccessToken.current != nil
         {
             let params = ["fields" : "name,picture,birthday,friends,likes"]
             let graphRequest = GraphRequest(graphPath: "me", parameters: params)
@@ -27,8 +29,6 @@ class FacebookHandler
                     if let responseDictionary = graphResponse.dictionaryValue
                     {
                         handleFacebookResult(response: responseDictionary)
-                        
-                        //self.ref.child("users").child(user.id).setValue(["name":user.name,"picture": user.picture])
                     }
                 }
             }
@@ -37,19 +37,26 @@ class FacebookHandler
     
     static func handleFacebookResult(response: [String : Any])
     {
+        ref = FIRDatabase.database().reference()
+        
         let id = AccessToken.current?.userId
         let birthday = response["birthday"]
         let name = response["name"]
         
+        
         let friendObject = JSON(response["friends"]!)
         let friends = friendObject["summary"]["total_count"]
         
-        print(id!)
-        print(birthday!)
-        print(name!)
-        print(friends)
+        let pictureObject = JSON(response["picture"]!)
+        let picture = pictureObject["data"]["url"]
+        
+        self.ref.child("users").child(id!).setValue(["name":name,
+                                                     "picture":picture.stringValue,
+                                                     "id":id,
+                                                     "birthday":birthday,
+                                                     "friends_count":friends.stringValue])
     }
-
+    
     func getUrlFromJSON(json: Any) -> String
     {
         let object = JSON(json)

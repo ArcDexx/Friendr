@@ -6,4 +6,5 @@ target "Friendr" do
 	pod 'SwiftyJSON'
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
+	pod 'AlamofireImage'
 end

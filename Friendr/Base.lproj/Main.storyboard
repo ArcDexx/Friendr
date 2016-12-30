@@ -48,12 +48,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ppv-aX-bgC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileCell" id="ppv-aX-bgC" customClass="ProfileTableViewCell" customModule="Friendr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ppv-aX-bgC" id="dVZ-Dx-e6d">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY9-FX-wcG">
+                                            <rect key="frame" x="151" y="14" width="73" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hLO-hA-8zp">
+                                            <rect key="frame" x="20" y="0.0" width="44" height="41"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="45" id="6if-QO-9pk"/>
+                                                <constraint firstAttribute="height" constant="45" id="kys-mU-28G"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hLO-hA-8zp" firstAttribute="leading" secondItem="dVZ-Dx-e6d" secondAttribute="leading" constant="20" id="1Ae-hx-GTZ"/>
+                                        <constraint firstItem="UY9-FX-wcG" firstAttribute="centerX" secondItem="dVZ-Dx-e6d" secondAttribute="centerX" id="a0Q-lM-IJL"/>
+                                        <constraint firstItem="UY9-FX-wcG" firstAttribute="centerY" secondItem="dVZ-Dx-e6d" secondAttribute="centerY" id="jz1-te-Mea"/>
+                                        <constraint firstAttribute="bottom" secondItem="hLO-hA-8zp" secondAttribute="bottom" constant="2.5" id="o8y-It-oJP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
