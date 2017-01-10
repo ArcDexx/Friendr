@@ -32,6 +32,7 @@ class FRUserListTableViewController: UIViewController, UITableViewDelegate, UITa
         
         fillUserList()
         
+        self.tableView.addSubview(self.refreshControl)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,6 +40,20 @@ class FRUserListTableViewController: UIViewController, UITableViewDelegate, UITa
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(FRUserListTableViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
+    
+    public func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.users.removeAll()
+        tableView.reloadData()
+        fillUserList()
+        refreshControl.endRefreshing()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
