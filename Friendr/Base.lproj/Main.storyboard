@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ppv-aX-bgC" id="dVZ-Dx-e6d">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY9-FX-wcG">
@@ -61,21 +61,27 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hLO-hA-8zp">
-                                            <rect key="frame" x="20" y="0.0" width="44" height="41"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hLO-hA-8zp">
+                                            <rect key="frame" x="26" y="7" width="27" height="27"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="45" id="6if-QO-9pk"/>
-                                                <constraint firstAttribute="height" constant="45" id="kys-mU-28G"/>
+                                                <constraint firstAttribute="width" constant="27" id="6if-QO-9pk"/>
+                                                <constraint firstAttribute="height" constant="27" id="kys-mU-28G"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="hLO-hA-8zp" firstAttribute="leading" secondItem="dVZ-Dx-e6d" secondAttribute="leading" constant="20" id="1Ae-hx-GTZ"/>
+                                        <constraint firstItem="hLO-hA-8zp" firstAttribute="leading" secondItem="dVZ-Dx-e6d" secondAttribute="leading" constant="26" id="1Ae-hx-GTZ"/>
                                         <constraint firstItem="UY9-FX-wcG" firstAttribute="centerX" secondItem="dVZ-Dx-e6d" secondAttribute="centerX" id="a0Q-lM-IJL"/>
                                         <constraint firstItem="UY9-FX-wcG" firstAttribute="centerY" secondItem="dVZ-Dx-e6d" secondAttribute="centerY" id="jz1-te-Mea"/>
-                                        <constraint firstAttribute="bottom" secondItem="hLO-hA-8zp" secondAttribute="bottom" constant="2.5" id="o8y-It-oJP"/>
+                                        <constraint firstItem="hLO-hA-8zp" firstAttribute="centerX" secondItem="dVZ-Dx-e6d" secondAttribute="centerX" constant="-148" id="o8t-jn-2oC"/>
+                                        <constraint firstAttribute="bottom" secondItem="hLO-hA-8zp" secondAttribute="bottom" constant="10" id="o8y-It-oJP"/>
+                                        <constraint firstItem="hLO-hA-8zp" firstAttribute="centerY" secondItem="dVZ-Dx-e6d" secondAttribute="centerY" constant="-1.5" id="sHA-yN-IdN"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameAgeLabel" destination="UY9-FX-wcG" id="LJh-0z-enL"/>
+                                    <outlet property="profilePic" destination="hLO-hA-8zp" id="JO2-c2-l4t"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -87,6 +93,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Exit" id="3ZM-oi-swd"/>
                         <barButtonItem key="rightBarButtonItem" title="Map" id="R8k-wE-XTb"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="YsI-o7-Ve1" id="p3w-xu-j90"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vqq-zj-exf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

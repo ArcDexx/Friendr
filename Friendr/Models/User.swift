@@ -39,6 +39,7 @@ class User
         dcf.unitsStyle = .full
         
         self.age = dcf.string(from: DOB!, to: Date())!
+        self.age = self.age.replacingOccurrences(of: " years", with: "")
     }
 }
 

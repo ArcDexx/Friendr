@@ -16,15 +16,22 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var profilePic: UIImageView!
 }
 
-class FRUserListTableViewController: UITableViewController {
+class FRUserListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var users : Array<User> = []
     var ref: FIRDatabaseReference!
+    let cellReuseIdentifier = "ProfileCell"
+    
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         fillUserList()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,12 +46,12 @@ class FRUserListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return users.count
     }
@@ -54,20 +61,24 @@ class FRUserListTableViewController: UITableViewController {
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
-
-        print(users[indexPath.row].picture)
-        let imageUrl = URL(string: users[indexPath.row].picture)
-        cell.nameAgeLabel?.text = users[indexPath.row].name + ", " + users[indexPath.row].age
+        let cell:ProfileTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! ProfileTableViewCell
         
-        if imageUrl != nil
-        {
-            //cell.profilePic.af_setImage(withURL: imageUrl!)
-        }
-
+        let imageUrl = URL(string: users[indexPath.row].picture)
+        let nameAge = users[indexPath.row].name + ", " + users[indexPath.row].age
+        
+        cell.profilePic.layer.borderWidth = 1
+        cell.profilePic.layer.masksToBounds = false
+        cell.profilePic.layer.borderColor = UIColor.black.cgColor
+        cell.profilePic.layer.cornerRadius = cell.profilePic.frame.height/2
+        cell.profilePic.clipsToBounds = true
+        
+        cell.nameAgeLabel.text = nameAge
+        cell.profilePic.af_setImage(withURL: imageUrl!)
+    
         print("cellForRow called")
+        
         return cell
     }
     
