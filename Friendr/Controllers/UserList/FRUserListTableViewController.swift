@@ -105,9 +105,18 @@ class FRUserListTableViewController: UIViewController, UITableViewDelegate, UITa
             let jsonUsers = JSON(snapshot.value!)
             
             for (key, user) in jsonUsers {
-                let user = User(id: user["id"].stringValue, name: user["name"].stringValue, picture: user["picture"].stringValue, birthday: user["birthday"].stringValue, sampleLikes: "", totalFriends: user["friends_count"].stringValue)
+                let user = User(id: user["id"].stringValue,
+                                name: user["name"].stringValue,
+                                picture: user["picture"].stringValue,
+                                birthday: user["birthday"].stringValue,
+                                sampleLikes: "",
+                                totalFriends: user["friends_count"].stringValue,
+                                latitude: user["latitude"].doubleValue,
+                                longitude: user["longitude"].doubleValue,
+                                largePicture: user["largePicture"].stringValue)
                 
                 self.users.append(user)
+                UserStore.userStore.users.append(user)
                 
                 self.tableView.beginUpdates()
                 let indexPath = IndexPath(row: self.users.count - 1, section: 0)
@@ -117,6 +126,11 @@ class FRUserListTableViewController: UIViewController, UITableViewDelegate, UITa
         })
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {  
+        UserStore.userStore.selectedUser = users[indexPath.row]
+        performSegue(withIdentifier: "profileSegue", sender: self)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -151,15 +165,6 @@ class FRUserListTableViewController: UIViewController, UITableViewDelegate, UITa
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

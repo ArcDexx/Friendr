@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,7 +40,77 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="60.719640179910051"/>
         </scene>
-        <!--User List Table View Controller-->
+        <!--Profile-->
+        <scene sceneID="lzi-eR-NPJ">
+            <objects>
+                <viewController id="ZHJ-wt-Nvv" customClass="FRProfileViewController" customModule="Friendr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cv1-ON-Cp5"/>
+                        <viewControllerLayoutGuide type="bottom" id="LkJ-oC-qL5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y42-Oq-qxq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N1l-WX-doQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="284"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjd-0x-FER">
+                                <rect key="frame" x="16" y="402" width="343" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttl-Qd-wwg">
+                                <rect key="frame" x="16" y="356" width="343" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Mba-IA-HDu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFI-9j-NED">
+                                <rect key="frame" x="16" y="449" width="343" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vjd-0x-FER" firstAttribute="leading" secondItem="Ttl-Qd-wwg" secondAttribute="leading" id="6Eq-HI-P8V"/>
+                            <constraint firstItem="LkJ-oC-qL5" firstAttribute="top" secondItem="iFI-9j-NED" secondAttribute="bottom" constant="179" id="7Uj-B2-iJh"/>
+                            <constraint firstItem="Ttl-Qd-wwg" firstAttribute="top" secondItem="N1l-WX-doQ" secondAttribute="bottom" constant="8" id="86t-Mf-3TB"/>
+                            <constraint firstItem="LkJ-oC-qL5" firstAttribute="top" secondItem="vjd-0x-FER" secondAttribute="bottom" constant="226" id="8en-F2-Uc4"/>
+                            <constraint firstItem="iFI-9j-NED" firstAttribute="top" secondItem="vjd-0x-FER" secondAttribute="bottom" constant="8" id="DRe-CG-TvT"/>
+                            <constraint firstItem="N1l-WX-doQ" firstAttribute="leading" secondItem="Y42-Oq-qxq" secondAttribute="leading" id="HUh-d2-6HQ"/>
+                            <constraint firstItem="Ttl-Qd-wwg" firstAttribute="centerX" secondItem="N1l-WX-doQ" secondAttribute="centerX" id="MQP-Lm-Y0i"/>
+                            <constraint firstItem="Ttl-Qd-wwg" firstAttribute="trailing" secondItem="Y42-Oq-qxq" secondAttribute="trailingMargin" id="OHc-Zu-dyO"/>
+                            <constraint firstItem="iFI-9j-NED" firstAttribute="leading" secondItem="vjd-0x-FER" secondAttribute="leading" id="RWW-RN-F4D"/>
+                            <constraint firstItem="Ttl-Qd-wwg" firstAttribute="top" secondItem="N1l-WX-doQ" secondAttribute="bottom" constant="8" symbolic="YES" id="S9s-EE-diY"/>
+                            <constraint firstItem="Ttl-Qd-wwg" firstAttribute="top" secondItem="N1l-WX-doQ" secondAttribute="bottom" constant="8" id="Tlg-A3-VwL"/>
+                            <constraint firstItem="Ttl-Qd-wwg" firstAttribute="leading" secondItem="Y42-Oq-qxq" secondAttribute="leadingMargin" id="WAN-Jk-p3f"/>
+                            <constraint firstItem="N1l-WX-doQ" firstAttribute="top" secondItem="Cv1-ON-Cp5" secondAttribute="bottom" id="ZUE-cm-pyz"/>
+                            <constraint firstItem="LkJ-oC-qL5" firstAttribute="top" secondItem="Ttl-Qd-wwg" secondAttribute="bottom" constant="273" id="lgS-fq-hBZ"/>
+                            <constraint firstItem="iFI-9j-NED" firstAttribute="trailing" secondItem="vjd-0x-FER" secondAttribute="trailing" id="rvk-3F-ccF"/>
+                            <constraint firstItem="vjd-0x-FER" firstAttribute="trailing" secondItem="Ttl-Qd-wwg" secondAttribute="trailing" id="sEn-dp-mwb"/>
+                            <constraint firstItem="vjd-0x-FER" firstAttribute="top" secondItem="Ttl-Qd-wwg" secondAttribute="bottom" constant="8" id="sVh-aa-sCB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="RTN-dj-ADI"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="vjd-0x-FER" id="ypU-fO-YM5"/>
+                        <outlet property="friendsLabel" destination="iFI-9j-NED" id="hhz-UO-2eM"/>
+                        <outlet property="nameLabel" destination="Ttl-Qd-wwg" id="tar-I3-Xu3"/>
+                        <outlet property="profilePic" destination="N1l-WX-doQ" id="Joh-Wt-VcH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3sU-dE-J80" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1960.8" y="-599.55022488755628"/>
+        </scene>
+        <!--Friendr-->
         <scene sceneID="IAP-bG-878">
             <objects>
                 <tableViewController storyboardIdentifier="userList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xVa-dG-rNd" customClass="FRUserListTableViewController" customModule="Friendr" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,8 +160,7 @@
                             <outlet property="delegate" destination="xVa-dG-rNd" id="hYT-jz-J0s"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="x81-mO-8U9">
-                        <barButtonItem key="leftBarButtonItem" title="Exit" id="3ZM-oi-swd"/>
+                    <navigationItem key="navigationItem" title="Friendr" id="x81-mO-8U9">
                         <barButtonItem key="rightBarButtonItem" title="Map" id="R8k-wE-XTb">
                             <connections>
                                 <segue destination="UH8-Ut-dEO" kind="show" identifier="mapSegue" id="JlZ-Uh-Qph"/>
@@ -99,13 +169,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YsI-o7-Ve1" id="p3w-xu-j90"/>
+                        <segue destination="ZHJ-wt-Nvv" kind="show" identifier="profileSegue" id="gZX-fk-lof"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vqq-zj-exf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1952.8" y="60.719640179910051"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="Jw1-mW-cuJ">
             <objects>
                 <viewController id="UH8-Ut-dEO" customClass="FRMapViewController" customModule="Friendr" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,6 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Map" id="c7c-fv-CuK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QnF-8X-RaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

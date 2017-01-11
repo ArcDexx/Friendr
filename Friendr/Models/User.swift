@@ -17,9 +17,12 @@ class User
     var age : String
     var sampleLikes: String
     var totalFriends : String
+    var latitude : Double
+    var longitude : Double
+    var largePicture : String
     
     init(id: String, name: String, picture: String, birthday: String,
-         sampleLikes: String, totalFriends: String)
+         sampleLikes: String, totalFriends: String, latitude : Double, longitude : Double, largePicture : String)
     {
         self.id = id
         self.name = name
@@ -27,6 +30,9 @@ class User
         self.birthday = birthday
         self.sampleLikes = sampleLikes
         self.totalFriends = totalFriends
+        self.latitude = latitude
+        self.longitude = longitude
+        self.largePicture = largePicture
         
         let formatter = DateFormatter()
         

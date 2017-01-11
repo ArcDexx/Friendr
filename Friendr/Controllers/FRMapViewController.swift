@@ -11,20 +11,28 @@ import GoogleMaps
 
 class FRMapViewController: UIViewController {
 
+    var users : Array<User> = UserStore.userStore.users
+    var currentUser : User = UserStore.userStore.currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86,
-                                                          longitude: 151.20, zoom: 6)
+        
+        let camera = GMSCameraPosition.camera(withLatitude: currentUser.latitude,
+                                              longitude: currentUser.longitude,
+                                              zoom: 7)
+        
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.isMyLocationEnabled = true
         self.view = mapView
         
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        for user in self.users
+        {
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(user.latitude, user.longitude)
+            marker.title = user.name
+            marker.snippet = "Age: " + user.age + "  Friends: " + user.totalFriends
+            marker.map = mapView
+        }
     }
 
     override func didReceiveMemoryWarning() {
