@@ -11,13 +11,33 @@ import FacebookLogin
 import FacebookCore
 import SwiftyJSON
 import FirebaseDatabase
+import CoreLocation
 
-class FRLoginViewController: UIViewController, LoginButtonDelegate {
+class FRLoginViewController: UIViewController, LoginButtonDelegate, CLLocationManagerDelegate {
 
     var ref: FIRDatabaseReference!
+    let locationManager = CLLocationManager()
+    var lat = 0.0
+    var long = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager.requestAlwaysAuthorization()
+        
+
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            
+            let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
+            
+            self.lat = locValue.latitude
+            self.long = locValue.longitude
+        }
         
         ref = FIRDatabase.database().reference()
         
@@ -38,7 +58,7 @@ class FRLoginViewController: UIViewController, LoginButtonDelegate {
             print("Cancelled")
         default:
             print("Logged In")
-            FacebookHandler.getFacebookData()
+            FacebookHandler.getFacebookData(lat: lat, long: long)
             performSegue(withIdentifier: "toListFromLogin", sender: self)
         }
     }

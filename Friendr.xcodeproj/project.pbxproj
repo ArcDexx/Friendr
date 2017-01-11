@@ -11,6 +11,7 @@
 		277C944C1E0EE21B00F8F437 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C944B1E0EE21B00F8F437 /* User.swift */; };
 		277C94501E0EF04C00F8F437 /* FacebookHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C944F1E0EF04C00F8F437 /* FacebookHandler.swift */; };
 		27E9C4831E0EB98E005EF471 /* FRUserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */; };
+		4C3425A21E267F360046D10B /* FRMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3425A11E267F360046D10B /* FRMapViewController.swift */; };
 		4C38D2741E04742D00609C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38D2731E04742D00609C2A /* AppDelegate.swift */; };
 		4C38D2761E04742D00609C2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38D2751E04742D00609C2A /* ViewController.swift */; };
 		4C38D2791E04742D00609C2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C38D2771E04742D00609C2A /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FRUserListTableViewController.swift; path = Controllers/UserList/FRUserListTableViewController.swift; sourceTree = "<group>"; };
 		27E9C4841E0EC2DD005EF471 /* Friendr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Friendr.entitlements; sourceTree = "<group>"; };
 		37BB5C0D44A8B1E882AE9C81 /* Pods_Friendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C3425A11E267F360046D10B /* FRMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FRMapViewController.swift; path = Controllers/FRMapViewController.swift; sourceTree = "<group>"; };
 		4C38D2701E04742D00609C2A /* Friendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C38D2731E04742D00609C2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C38D2751E04742D00609C2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 				27E9C4821E0EB98E005EF471 /* FRUserListTableViewController.swift */,
 			);
 			name = UserList;
+			sourceTree = "<group>";
+		};
+		4C3425A01E267F080046D10B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4C3425A11E267F360046D10B /* FRMapViewController.swift */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		4C38D2671E04742D00609C2A = {
@@ -108,6 +118,7 @@
 		4C38D2851E0475F900609C2A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4C3425A01E267F080046D10B /* Map */,
 				27E9C47F1E0EB8FA005EF471 /* UserList */,
 				4C38D28A1E04762500609C2A /* Login */,
 			);
@@ -294,6 +305,7 @@
 				27E9C4831E0EB98E005EF471 /* FRUserListTableViewController.swift in Sources */,
 				4C38D2761E04742D00609C2A /* ViewController.swift in Sources */,
 				4C38D28C1E04768A00609C2A /* FRLoginViewController.swift in Sources */,
+				4C3425A21E267F360046D10B /* FRMapViewController.swift in Sources */,
 				277C944C1E0EE21B00F8F437 /* User.swift in Sources */,
 				277C94501E0EF04C00F8F437 /* FacebookHandler.swift in Sources */,
 				4C38D2741E04742D00609C2A /* AppDelegate.swift in Sources */,

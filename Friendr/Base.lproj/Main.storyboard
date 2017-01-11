@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ppv-aX-bgC" id="dVZ-Dx-e6d">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY9-FX-wcG">
@@ -91,7 +91,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="x81-mO-8U9">
                         <barButtonItem key="leftBarButtonItem" title="Exit" id="3ZM-oi-swd"/>
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="R8k-wE-XTb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="R8k-wE-XTb">
+                            <connections>
+                                <segue destination="UH8-Ut-dEO" kind="show" identifier="mapSegue" id="JlZ-Uh-Qph"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YsI-o7-Ve1" id="p3w-xu-j90"/>
@@ -101,12 +105,30 @@
             </objects>
             <point key="canvasLocation" x="1952.8" y="60.719640179910051"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Jw1-mW-cuJ">
+            <objects>
+                <viewController id="UH8-Ut-dEO" customClass="FRMapViewController" customModule="Friendr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jyq-ML-sCh"/>
+                        <viewControllerLayoutGuide type="bottom" id="jJZ-6Z-bXa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ll8-w8-gGV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnF-8X-RaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2934" y="61"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="y6L-yT-Imc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u8D-EO-NFH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pa5-Dc-94b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pa5-Dc-94b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

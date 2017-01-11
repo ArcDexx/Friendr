@@ -7,4 +7,5 @@ target "Friendr" do
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
 	pod 'AlamofireImage'
+	pod 'GoogleMaps'
 end

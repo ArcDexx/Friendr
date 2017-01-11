@@ -10,12 +10,11 @@ import Foundation
 import FacebookCore
 import SwiftyJSON
 import FirebaseDatabase
-
 class FacebookHandler
 {
     static var ref: FIRDatabaseReference!
     
-    static func getFacebookData()
+    static func getFacebookData(lat: Double, long: Double)
     {
         if AccessToken.current != nil
         {
@@ -28,14 +27,14 @@ class FacebookHandler
                 case .success(let graphResponse):
                     if let responseDictionary = graphResponse.dictionaryValue
                     {
-                        handleFacebookResult(response: responseDictionary)
+                        handleFacebookResult(response: responseDictionary, lat: lat, long: long)
                     }
                 }
             }
         }
     }
     
-    static func handleFacebookResult(response: [String : Any])
+    static func handleFacebookResult(response: [String : Any], lat: Double, long: Double)
     {
         ref = FIRDatabase.database().reference()
         
@@ -54,7 +53,9 @@ class FacebookHandler
                                                      "picture":picture.stringValue,
                                                      "id":id,
                                                      "birthday":birthday,
-                                                     "friends_count":friends.stringValue])
+                                                     "friends_count":friends.stringValue,
+                                                     "latitude":lat,
+                                                     "longitude":long])
     }
     
     func getUrlFromJSON(json: Any) -> String
