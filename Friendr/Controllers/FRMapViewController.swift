@@ -46,6 +46,7 @@ class FRMapViewController: UIViewController {
             let imageUrl = URL(string: user.picture)
             let markerView : UIImageView = UIImageView(frame: CGRect(x:0, y:0, width: 100, height: 100));
             markerView.af_setImage(withURL: imageUrl!)
+            marker.icon = markerView.image
             
             marker.map = mapView
             
