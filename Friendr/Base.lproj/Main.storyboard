@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friendr" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTT-VY-aw3">
-                                <rect key="frame" x="111" y="185" width="152" height="35"/>
+                                <rect key="frame" x="111" y="86" width="152" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="40"/>
                                 <color key="textColor" red="0.4538492669381039" green="0.83524294695981549" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,12 +76,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO5-Ra-SK5">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vT7-g8-i7O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Show on map">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showOnMap:" destination="ZHJ-wt-Nvv" eventType="touchUpInside" id="Kja-jK-oPR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vjd-0x-FER" firstAttribute="leading" secondItem="Ttl-Qd-wwg" secondAttribute="leading" id="6Eq-HI-P8V"/>
                             <constraint firstItem="LkJ-oC-qL5" firstAttribute="top" secondItem="iFI-9j-NED" secondAttribute="bottom" constant="179" id="7Uj-B2-iJh"/>
                             <constraint firstItem="Ttl-Qd-wwg" firstAttribute="top" secondItem="N1l-WX-doQ" secondAttribute="bottom" constant="8" id="86t-Mf-3TB"/>
+                            <constraint firstItem="LkJ-oC-qL5" firstAttribute="top" secondItem="fO5-Ra-SK5" secondAttribute="bottom" constant="20" id="8Rs-tc-jFo"/>
                             <constraint firstItem="LkJ-oC-qL5" firstAttribute="top" secondItem="vjd-0x-FER" secondAttribute="bottom" constant="226" id="8en-F2-Uc4"/>
                             <constraint firstItem="iFI-9j-NED" firstAttribute="top" secondItem="vjd-0x-FER" secondAttribute="bottom" constant="8" id="DRe-CG-TvT"/>
                             <constraint firstItem="N1l-WX-doQ" firstAttribute="leading" secondItem="Y42-Oq-qxq" secondAttribute="leading" id="HUh-d2-6HQ"/>
@@ -92,6 +106,8 @@
                             <constraint firstItem="Ttl-Qd-wwg" firstAttribute="top" secondItem="N1l-WX-doQ" secondAttribute="bottom" constant="8" id="Tlg-A3-VwL"/>
                             <constraint firstItem="Ttl-Qd-wwg" firstAttribute="leading" secondItem="Y42-Oq-qxq" secondAttribute="leadingMargin" id="WAN-Jk-p3f"/>
                             <constraint firstItem="N1l-WX-doQ" firstAttribute="top" secondItem="Cv1-ON-Cp5" secondAttribute="bottom" id="ZUE-cm-pyz"/>
+                            <constraint firstItem="fO5-Ra-SK5" firstAttribute="trailing" secondItem="iFI-9j-NED" secondAttribute="trailing" id="gNY-TV-Fm3"/>
+                            <constraint firstItem="fO5-Ra-SK5" firstAttribute="leading" secondItem="iFI-9j-NED" secondAttribute="leading" id="hNa-Qu-2Cp"/>
                             <constraint firstItem="LkJ-oC-qL5" firstAttribute="top" secondItem="Ttl-Qd-wwg" secondAttribute="bottom" constant="273" id="lgS-fq-hBZ"/>
                             <constraint firstItem="iFI-9j-NED" firstAttribute="trailing" secondItem="vjd-0x-FER" secondAttribute="trailing" id="rvk-3F-ccF"/>
                             <constraint firstItem="vjd-0x-FER" firstAttribute="trailing" secondItem="Ttl-Qd-wwg" secondAttribute="trailing" id="sEn-dp-mwb"/>
@@ -102,8 +118,10 @@
                     <connections>
                         <outlet property="ageLabel" destination="vjd-0x-FER" id="ypU-fO-YM5"/>
                         <outlet property="friendsLabel" destination="iFI-9j-NED" id="hhz-UO-2eM"/>
+                        <outlet property="mapButton" destination="fO5-Ra-SK5" id="WyT-zf-u7Q"/>
                         <outlet property="nameLabel" destination="Ttl-Qd-wwg" id="tar-I3-Xu3"/>
                         <outlet property="profilePic" destination="N1l-WX-doQ" id="Joh-Wt-VcH"/>
+                        <segue destination="UH8-Ut-dEO" kind="show" identifier="profileToMap" id="GRd-g0-qfJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sU-dE-J80" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,4 +232,7 @@
             <point key="canvasLocation" x="1013.6" y="60.719640179910051"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GRd-g0-qfJ"/>
+    </inferredMetricsTieBreakers>
 </document>

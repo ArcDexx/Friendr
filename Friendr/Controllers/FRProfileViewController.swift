@@ -15,6 +15,7 @@ class FRProfileViewController: UIViewController {
     @IBOutlet weak var ageLabel : UILabel!
     @IBOutlet weak var friendsLabel : UILabel!
     @IBOutlet weak var profilePic : UIImageView!
+    @IBOutlet weak var mapButton : UIButton!
     
     let user = UserStore.userStore.selectedUser
     
@@ -39,14 +40,23 @@ class FRProfileViewController: UIViewController {
     }
     
 
-    /*
+    @IBAction func showOnMap(_ sender: Any)
+    {
+        performSegue(withIdentifier: "profileToMap", sender: self)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "profileToMap"
+        {
+            let mapController = segue.destination as! FRMapViewController
+            mapController.fromProfile = true
+        }
     }
-    */
+    
 
 }

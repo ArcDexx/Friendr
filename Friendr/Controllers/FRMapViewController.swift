@@ -13,15 +13,26 @@ class FRMapViewController: UIViewController {
 
     var users : Array<User> = UserStore.userStore.users
     var currentUser : User = UserStore.userStore.currentUser
+    var fromProfile : Bool = false
+    var camera : GMSCameraPosition? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera = GMSCameraPosition.camera(withLatitude: currentUser.latitude,
-                                              longitude: currentUser.longitude,
-                                              zoom: 7)
+        if fromProfile
+        {
+            self.camera = GMSCameraPosition.camera(withLatitude: UserStore.userStore.selectedUser.latitude,
+                                                  longitude: UserStore.userStore.selectedUser.longitude,
+                                                  zoom: 11)
+        }
+        else
+        {
+            self.camera = GMSCameraPosition.camera(withLatitude: currentUser.latitude,
+                                                  longitude: currentUser.longitude,
+                                                  zoom: 7)
+        }
         
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera!)
         mapView.isMyLocationEnabled = true
         self.view = mapView
         
@@ -32,6 +43,11 @@ class FRMapViewController: UIViewController {
             marker.title = user.name
             marker.snippet = "Age: " + user.age + "  Friends: " + user.totalFriends
             marker.map = mapView
+            
+            if user.id == UserStore.userStore.selectedUser.id && fromProfile
+            {
+                mapView.selectedMarker = marker
+            }
         }
     }
 
