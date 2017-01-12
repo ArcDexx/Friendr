@@ -22,13 +22,17 @@ class FRProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapButton.layer.cornerRadius = 5
+        mapButton.layer.borderWidth = 1
+        mapButton.layer.borderColor = UIColor.init(colorLiteralRed: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0).cgColor
+        
         let imageUrl = URL(string: (user?.largePicture)!)
 
         nameLabel.text = user?.name
         ageLabel.text = (user?.age)! + " years old"
         friendsLabel.text = (user?.totalFriends)! + " friends"
         
-        profilePic.layer.borderWidth = 3
+        profilePic.layer.borderWidth = 2
         profilePic.layer.borderColor = UIColor.black.cgColor
         profilePic.af_setImage(withURL: imageUrl!)
         // Do any additional setup after loading the view.

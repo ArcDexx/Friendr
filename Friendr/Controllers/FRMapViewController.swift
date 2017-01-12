@@ -23,7 +23,7 @@ class FRMapViewController: UIViewController {
         {
             self.camera = GMSCameraPosition.camera(withLatitude: UserStore.userStore.selectedUser.latitude,
                                                   longitude: UserStore.userStore.selectedUser.longitude,
-                                                  zoom: 11)
+                                                  zoom: 10)
         }
         else
         {
@@ -42,9 +42,14 @@ class FRMapViewController: UIViewController {
             marker.position = CLLocationCoordinate2DMake(user.latitude, user.longitude)
             marker.title = user.name
             marker.snippet = "Age: " + user.age + "  Friends: " + user.totalFriends
+            
+            let imageUrl = URL(string: user.picture)
+            let markerView : UIImageView = UIImageView(frame: CGRect(x:0, y:0, width: 100, height: 100));
+            markerView.af_setImage(withURL: imageUrl!)
+            
             marker.map = mapView
             
-            if user.id == UserStore.userStore.selectedUser.id && fromProfile
+            if fromProfile && user.id == UserStore.userStore.selectedUser.id
             {
                 mapView.selectedMarker = marker
             }
